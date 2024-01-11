@@ -99,6 +99,7 @@ namespace StarterAssets
         private CharacterController _controller;
         private PlayerCharacterInput _input;
         private GameObject _mainCamera;
+        private InventoryController inventoryController;
 
         private const float _threshold = 0.01f;
 
@@ -147,10 +148,14 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
-            if (_input.inventory)
+/*            if (_input.inventory)
             {
                 InventoryShow();
             }
+            if (_input.spawn)
+            {
+                Debug.Log("Test");
+            }*/
         }
 
         private void LateUpdate()

@@ -11,7 +11,7 @@ public class InventoryController : MonoBehaviour
     private ItemGrid selectedItemGrid;
 
 
-    private PlayerCharacterInput _input;
+    //private PlayerCharacterInput _input;
 
     public ItemGrid SelectedItemGrid {
         get => selectedItemGrid;
@@ -48,6 +48,7 @@ public class InventoryController : MonoBehaviour
                 CreateRandomItem();
             }
         }*/
+        InsertRandomItem();
 
 /*        if (Input.GetKeyDown(KeyCode.W))
         {
@@ -73,9 +74,9 @@ public class InventoryController : MonoBehaviour
 
         HandleHighlight();
 
-/*        if (Input.GetMouseButtonDown(0))
+/*        if (Mouse.current.IsPressed)
         {
-            LeftButtonPress();
+            //LeftButtonPress();
         }*/
     }
 
@@ -86,7 +87,7 @@ public class InventoryController : MonoBehaviour
         selectedItem.Rotate();
     }
 
-    private void InsertRandomItem()
+    public void InsertRandomItem()
     {
         if (selectedItemGrid == null) { return; }
 
@@ -96,7 +97,7 @@ public class InventoryController : MonoBehaviour
         InsertItem(itemToInsert);
     }
 
-    private void InsertItem(InventoryItem itemToInsert)
+    public void InsertItem(InventoryItem itemToInsert)
     {
         Vector2Int? posOnGrid = selectedItemGrid.FindSpaceForObject(itemToInsert);
 
@@ -160,7 +161,8 @@ public class InventoryController : MonoBehaviour
     {
         if (selectedItem != null)
         {
-            rectTransform.position = Input.mousePosition;
+            //might need revisit
+            rectTransform.position = Mouse.current.position.ReadValue();
         }
     }
     public void LeftButtonPress()
@@ -179,12 +181,12 @@ public class InventoryController : MonoBehaviour
 
     private Vector2Int GetTileGridPosition()
     {
-        Vector2 position = _input.look;
+        Vector2 position = Mouse.current.position.ReadValue();
 
         if (selectedItem != null)
         {
-            _input.look.x -= (selectedItem.WIDTH - 1) * ItemGrid.tileSizeWidth / 2;
-            _input.look.y += (selectedItem.HEIGHT - 1) * ItemGrid.tileSizeHeight / 2;
+            position.x -= (selectedItem.WIDTH - 1) * ItemGrid.tileSizeWidth / 2;
+            position.y += (selectedItem.HEIGHT - 1) * ItemGrid.tileSizeHeight / 2;
         }
 
         return selectedItemGrid.GetTileGridPosition(position);

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ExampleItem : MonoBehaviour, IPickupable
 {
+    InventoryItemData ItemData;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +24,6 @@ public class ExampleItem : MonoBehaviour, IPickupable
     public void Pickup()
     {
         Destroy(gameObject);
+        //inventoryController.CreateRandomItem();
     }
 }
