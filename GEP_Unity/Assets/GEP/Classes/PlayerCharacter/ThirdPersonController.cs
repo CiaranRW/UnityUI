@@ -104,6 +104,8 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
+        public GameObject _test;
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -145,6 +147,10 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            if (_input.inventory)
+            {
+                InventoryShow();
+            }
         }
 
         private void LateUpdate()
@@ -332,6 +338,21 @@ namespace StarterAssets
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
             }
+        }
+
+        private void InventoryShow()
+        {
+            if (_test.activeSelf == true)
+            {
+                Debug.Log("done?");
+                _test.SetActive(false);
+            }
+            else if (_test.activeSelf == false)
+            {
+                Debug.Log("done?");
+                _test.SetActive(true);
+            }
+            _input.inventory = false;
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)

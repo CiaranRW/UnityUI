@@ -10,6 +10,7 @@ public class PlayerCharacterInput : MonoBehaviour
     public Vector2 look;
     public bool jump;
     public bool sprint;
+    public bool inventory;
 
     [Header("Movement Settings")]
     public bool analogMovement;
@@ -41,6 +42,11 @@ public class PlayerCharacterInput : MonoBehaviour
         SprintInput(value.isPressed);
     }
 
+    public void OnInventory(InputValue value)
+    {
+        InventoryInput(value.isPressed);
+    }
+
     public void MoveInput(Vector2 newMoveDirection)
     {
         move = newMoveDirection;
@@ -59,6 +65,11 @@ public class PlayerCharacterInput : MonoBehaviour
     public void SprintInput(bool newSprintState)
     {
         sprint = newSprintState;
+    }
+
+    public void InventoryInput(bool newInventoryState)
+    {
+        inventory = newInventoryState; 
     }
 
     private void OnApplicationFocus(bool hasFocus)
