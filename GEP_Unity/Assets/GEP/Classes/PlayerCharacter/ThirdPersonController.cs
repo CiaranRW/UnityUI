@@ -346,11 +346,15 @@ namespace StarterAssets
             {
                 Debug.Log("done?");
                 _test.SetActive(false);
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
             }
             else if (_test.activeSelf == false)
             {
                 Debug.Log("done?");
                 _test.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
             _input.inventory = false;
         }
