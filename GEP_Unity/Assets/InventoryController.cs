@@ -11,6 +11,8 @@ public class InventoryController : MonoBehaviour
     private ItemGrid selectedItemGrid;
 
 
+    private PlayerCharacterInput _input;
+
     public ItemGrid SelectedItemGrid {
         get => selectedItemGrid;
         set
@@ -38,16 +40,16 @@ public class InventoryController : MonoBehaviour
     private void Update()
     {
         ItemIconDrag();
-/*
-        if (Input.GetKeyDown(KeyCode.Q))
+
+/*        if (_input.spawn)
         {  
             if (selectedItem != null)
             {
                 CreateRandomItem();
             }
-        }
+        }*/
 
-        if (Input.GetKeyDown(KeyCode.W))
+/*        if (Input.GetKeyDown(KeyCode.W))
         {
             InsertRandomItem();
         }
@@ -57,6 +59,11 @@ public class InventoryController : MonoBehaviour
             RotateItem();
         }*/
 
+/*        if(_input.spawn)
+        {
+            Debug.Log("Test");
+        }*/
+
 
         if (selectedItemGrid == null)
         {
@@ -64,9 +71,9 @@ public class InventoryController : MonoBehaviour
             return;
         }
 
-/*        HandleHighlight();
+        HandleHighlight();
 
-        if (Input.GetMouseButtonDown(0))
+/*        if (Input.GetMouseButtonDown(0))
         {
             LeftButtonPress();
         }*/
@@ -100,7 +107,7 @@ public class InventoryController : MonoBehaviour
 
     Vector2Int oldPosition;
     InventoryItem itemToHighlight;
-/*    private void HandleHighlight()
+    private void HandleHighlight()
     {
         Vector2Int positionOnGrid = GetTileGridPosition();
         if(oldPosition == positionOnGrid) { return; }
@@ -134,7 +141,7 @@ public class InventoryController : MonoBehaviour
             inventoryHighlight.SetSize(selectedItem);
             inventoryHighlight.SetPosition(selectedItemGrid, selectedItem, positionOnGrid.x, positionOnGrid.y);
         }
-    }*/
+    }
 
     public void CreateRandomItem()
     {
@@ -156,7 +163,7 @@ public class InventoryController : MonoBehaviour
             rectTransform.position = Input.mousePosition;
         }
     }
-/*    public void LeftButtonPress()
+    public void LeftButtonPress()
     {
         Vector2Int tileGridPosition = GetTileGridPosition();
 
@@ -168,20 +175,20 @@ public class InventoryController : MonoBehaviour
         {
             PlaceItem(tileGridPosition);
         }
-    }*/
+    }
 
-/*    private Vector2Int GetTileGridPosition()
+    private Vector2Int GetTileGridPosition()
     {
-        //Vector2 position = Input.mousePosition;
+        Vector2 position = _input.look;
 
         if (selectedItem != null)
         {
-            //position.x -= (selectedItem.WIDTH - 1) * ItemGrid.tileSizeWidth / 2;
-            //position.y += (selectedItem.HEIGHT - 1) * ItemGrid.tileSizeHeight / 2;
+            _input.look.x -= (selectedItem.WIDTH - 1) * ItemGrid.tileSizeWidth / 2;
+            _input.look.y += (selectedItem.HEIGHT - 1) * ItemGrid.tileSizeHeight / 2;
         }
 
-        //return selectedItemGrid.GetTileGridPosition(position);
-    }*/
+        return selectedItemGrid.GetTileGridPosition(position);
+    }
 
     public void PlaceItem(Vector2Int tileGridPosition)
     {
