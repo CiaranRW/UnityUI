@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7663cb7c384990479c71c13cb7e7847, type: 3}
-  m_Name: Test Item 2
+  m_Name: Diamond
   m_EditorClassIdentifier: 
   ID: 0
-  DisplayName: Test Item 2
-  Description: second one lol
-  Icon: {fileID: 0}
-  MaxStackSize: 1
+  DisplayName: Test item 1
+  Description: 'Diamond
+
+'
+  Icon: {fileID: 21300000, guid: d2a5d0f0ebfe78f42a810d0af445e46b, type: 3}
+  MaxStackSize: 5

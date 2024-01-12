@@ -148,14 +148,14 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
-/*            if (_input.inventory)
+            if (_input.inventory)
             {
                 InventoryShow();
             }
             if (_input.spawn)
             {
                 Debug.Log("Test");
-            }*/
+            }
         }
 
         private void LateUpdate()
