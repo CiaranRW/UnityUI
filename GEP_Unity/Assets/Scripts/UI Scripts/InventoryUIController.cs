@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InventoryUIController : MonoBehaviour
 {
     public DynamicInventoryDisplay inventoryPanel;
+
+    private void Awake()
+    {
+        inventoryPanel.gameObject.SetActive(false);
+    }
 
     private void OnEnable()
     {
@@ -18,7 +24,10 @@ public class InventoryUIController : MonoBehaviour
 
     private void Update()
     {
-        
+        if (inventoryPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) 
+        {
+            inventoryPanel.gameObject.SetActive(false);
+        }
     }
 
     void DisplayInventory(InventorySystem invToDisplay)

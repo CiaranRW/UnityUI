@@ -8,26 +8,18 @@ public class DynamicInventoryDisplay : InventoryDisplay
     [SerializeField] protected InventorySlot_UI slotPrefab;
     protected override void Start()
     {
-        //InventoryHolder.OnDynamicsInventoryDisplayRequested += RefreshDynamicInventory;
         base.Start();
-
-        //AssignSlot(inventorySystem);
-    }
-
-    private void OnDestroy()
-    {
-        //InventoryHolder.OnDynamicsInventoryDisplayRequested -= RefreshDynamicInventory;
     }
 
     public void RefreshDynamicInventory(InventorySystem invToDisplay)
     {
+        ClearSlots();
         inventorySystem = invToDisplay;
+        AssignSlot(invToDisplay);
     }
 
     public override void AssignSlot(InventorySystem invToDisplay)
     {
-        ClearSlots();
-        
         slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
 
         if (invToDisplay == null) return;
