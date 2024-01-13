@@ -9,6 +9,10 @@ public class PlayerInventoryHolder : InventoryHolder
     [SerializeField] protected int secondaryInventorySize;
     [SerializeField] protected InventorySystem secondaryInventorySystem;
 
+    public GameObject backpack;
+
+    private bool test;
+
     public InventorySystem SecondaryInventorySystem => secondaryInventorySystem;
 
     public static UnityAction<InventorySystem> OnPlayerBackpackDisplayRequested;
@@ -23,9 +27,13 @@ public class PlayerInventoryHolder : InventoryHolder
 
     void Update()
     {
-        if(Keyboard.current.bKey.wasPressedThisFrame)
+        if(Keyboard.current.iKey.wasPressedThisFrame)
         {
-            OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
+            if(backpack.activeSelf == true)
+            {
+                OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
+                test = true;
+            }
         }
     }
 
