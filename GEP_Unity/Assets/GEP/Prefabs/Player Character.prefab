@@ -1990,7 +1990,6 @@ GameObject:
   - component: {fileID: 4174508469755562976}
   - component: {fileID: 4174508469755562982}
   - component: {fileID: 4174508469755562981}
-  - component: {fileID: 1964322113951743817}
   - component: {fileID: 7225226454402747178}
   - component: {fileID: 7225226454402747179}
   - component: {fileID: 622981593527853520}
@@ -1998,6 +1997,7 @@ GameObject:
   - component: {fileID: 4174508469755562983}
   - component: {fileID: 4174508469755562980}
   - component: {fileID: 5701302907959869927}
+  - component: {fileID: 7814484240394919945}
   m_Layer: 8
   m_Name: Player Character
   m_TagString: Player
@@ -2095,21 +2095,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1964322113951743817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7225226454402747168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d65d2c46dd8c7294c9c3f70d037b94cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventorySize: 10
-  inventorySystem:
-    inventorySlots: []
 --- !u!143 &7225226454402747178
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2359,6 +2344,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   InteractionPointRadius: 4
+--- !u!114 &7814484240394919945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225226454402747168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53fa1547c6566c44a8f50df6f619428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySize: 10
+  primaryInventorySystem:
+    inventorySlots: []
+  secondaryInventorySize: 30
+  secondaryInventorySystem:
+    inventorySlots: []
 --- !u!1 &7298392507975684595
 GameObject:
   m_ObjectHideFlags: 0
