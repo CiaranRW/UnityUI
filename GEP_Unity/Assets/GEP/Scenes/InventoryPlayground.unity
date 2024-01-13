@@ -541,6 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestPanel: {fileID: 1596923303}
   playerBackpackPanel: {fileID: 1555718740}
+  inventoryUI: {fileID: 1006769205}
 --- !u!1 &229038483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,6 +1010,7 @@ GameObject:
   - component: {fileID: 553386531}
   - component: {fileID: 553386530}
   - component: {fileID: 553386529}
+  - component: {fileID: 553386533}
   m_Layer: 8
   m_Name: Backpack pickup
   m_TagString: Untagged
@@ -1096,12 +1098,25 @@ Transform:
   m_GameObject: {fileID: 553386528}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.323, z: 3.672}
+  m_LocalPosition: {x: 1.094, y: 0.323, z: 1.336}
   m_LocalScale: {x: 0.41256, y: 0.54402, z: 0.40271}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553386533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553386528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10dc1f349b744a43bf4aa685ce1c7e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Backpack: {fileID: 1574426661}
 --- !u!1 &747148926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1825,12 +1840,12 @@ GameObject:
   - component: {fileID: 1006769206}
   - component: {fileID: 1006769208}
   m_Layer: 5
-  m_Name: Test
+  m_Name: inventoryUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1006769206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2900,8 +2915,6 @@ GameObject:
   - component: {fileID: 1697071428}
   - component: {fileID: 1697071427}
   - component: {fileID: 1697071426}
-  - component: {fileID: 1697071425}
-  - component: {fileID: 1697071424}
   - component: {fileID: 1697071430}
   - component: {fileID: 1697071429}
   m_Layer: 0
@@ -2911,39 +2924,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1697071424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1697071423}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c10dc1f349b744a43bf4aa685ce1c7e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &1697071425
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1697071423}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1697071426
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3055,8 +3035,6 @@ GameObject:
   - component: {fileID: 1725227772}
   - component: {fileID: 1725227771}
   - component: {fileID: 1725227770}
-  - component: {fileID: 1725227769}
-  - component: {fileID: 1725227768}
   - component: {fileID: 1725227767}
   - component: {fileID: 1725227766}
   m_Layer: 0
@@ -3100,39 +3078,6 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1725227768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725227765}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c10dc1f349b744a43bf4aa685ce1c7e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &1725227769
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725227765}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1725227770
 MeshRenderer:
@@ -3547,8 +3492,6 @@ GameObject:
   - component: {fileID: 2121750674}
   - component: {fileID: 2121750673}
   - component: {fileID: 2121750672}
-  - component: {fileID: 2121750671}
-  - component: {fileID: 2121750670}
   - component: {fileID: 2121750669}
   - component: {fileID: 2121750668}
   m_Layer: 0
@@ -3592,39 +3535,6 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2121750670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121750667}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c10dc1f349b744a43bf4aa685ce1c7e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &2121750671
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121750667}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2121750672
 MeshRenderer:
@@ -4160,6 +4070,11 @@ PrefabInstance:
       propertyPath: _test
       value: 
       objectReference: {fileID: 1006769205}
+    - target: {fileID: 7814484240394919945, guid: 4df9a87682b4e6647adb52038cc94cab,
+        type: 3}
+      propertyPath: backpackUI
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8002607922324312474, guid: 4df9a87682b4e6647adb52038cc94cab,
         type: 3}
       propertyPath: m_LocalPosition.x

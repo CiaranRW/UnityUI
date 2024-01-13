@@ -10,8 +10,7 @@ public class PlayerInventoryHolder : InventoryHolder
     [SerializeField] protected InventorySystem secondaryInventorySystem;
 
     public GameObject backpack;
-
-    private bool test;
+    public GameObject backpackUI;
 
     public InventorySystem SecondaryInventorySystem => secondaryInventorySystem;
 
@@ -27,14 +26,13 @@ public class PlayerInventoryHolder : InventoryHolder
 
     void Update()
     {
-        if(Keyboard.current.iKey.wasPressedThisFrame)
+        if (backpack.activeSelf == true)
         {
-            if(backpack.activeSelf == true)
+            if (Keyboard.current.iKey.wasPressedThisFrame)
             {
                 OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
-                test = true;
             }
-        }
+        } 
     }
 
     public bool AddToInventory(InventoryItemData data, int amount)

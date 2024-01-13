@@ -7,6 +7,7 @@ public class InventoryUIController : MonoBehaviour
 {
     public DynamicInventoryDisplay chestPanel;
     public DynamicInventoryDisplay playerBackpackPanel;
+    public GameObject inventoryUI;
 
     private void Awake()
     {
@@ -32,9 +33,18 @@ public class InventoryUIController : MonoBehaviour
         {
             chestPanel.gameObject.SetActive(false);
         }
-        if (playerBackpackPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (playerBackpackPanel.gameObject.activeInHierarchy &&
+            (Keyboard.current.escapeKey.wasPressedThisFrame))
         {
             playerBackpackPanel.gameObject.SetActive(false);
+        }
+        if (inventoryUI.gameObject.activeInHierarchy &&
+           (Keyboard.current.escapeKey.wasPressedThisFrame))
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            inventoryUI.gameObject.SetActive(false);
+
         }
     }
 

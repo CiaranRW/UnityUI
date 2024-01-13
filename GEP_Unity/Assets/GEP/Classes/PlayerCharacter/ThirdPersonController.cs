@@ -152,10 +152,6 @@ namespace StarterAssets
             {
                 InventoryShow();
             }
-            if (_input.spawn)
-            {
-                Debug.Log("Test");
-            }
         }
 
         private void LateUpdate()
