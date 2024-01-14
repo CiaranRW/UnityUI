@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExampleItem : MonoBehaviour, IPickupable
 {
     public GameObject Backpack;
+    public GameObject Backpack_IMG;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class ExampleItem : MonoBehaviour, IPickupable
     public void Pickup()
     {
         Backpack.SetActive(true);
+        Backpack_IMG.SetActive(true);
         Destroy(this.gameObject);
     }
 }

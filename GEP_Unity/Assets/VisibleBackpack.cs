@@ -13,7 +13,7 @@ public class VisibleBackpack : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+/*    void Update()
     {
         if (this.gameObject.activeSelf == true)
         {
@@ -22,5 +22,5 @@ public class VisibleBackpack : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
-    }
+    }*/
 }

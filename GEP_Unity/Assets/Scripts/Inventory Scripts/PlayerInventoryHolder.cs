@@ -10,7 +10,6 @@ public class PlayerInventoryHolder : InventoryHolder
     [SerializeField] protected InventorySystem secondaryInventorySystem;
 
     public GameObject backpack;
-    public GameObject backpackUI;
 
     public InventorySystem SecondaryInventorySystem => secondaryInventorySystem;
 
@@ -28,10 +27,7 @@ public class PlayerInventoryHolder : InventoryHolder
     {
         if (backpack.activeSelf == true)
         {
-            if (Keyboard.current.iKey.wasPressedThisFrame)
-            {
-                OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
-            }
+            OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
         } 
     }
 

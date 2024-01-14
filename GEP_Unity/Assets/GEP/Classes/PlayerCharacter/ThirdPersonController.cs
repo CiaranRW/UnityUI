@@ -106,6 +106,7 @@ namespace StarterAssets
         private bool _hasAnimator;
 
         public GameObject _test;
+        public bool _isStuck;
 
         private bool IsCurrentDeviceMouse
         {
@@ -143,6 +144,18 @@ namespace StarterAssets
 
         private void Update()
         {
+/*            if (_inventoryUI.activeSelf == true)
+            {
+                _isStuck = true;
+            }*/
+
+            if (Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+                _isStuck = false;
+            }
+
             _hasAnimator = TryGetComponent(out _animator);
 
             JumpAndGravity();
@@ -157,6 +170,22 @@ namespace StarterAssets
         private void LateUpdate()
         {
             CameraRotation();
+        }
+
+        private void InventoryShow()
+        {
+            if (_test.activeSelf == true)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else if (_test.activeSelf == false)
+            {
+                _test.SetActive(true);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+            _input.inventory = false;
         }
 
         private void AssignAnimationIDs()
@@ -208,6 +237,11 @@ namespace StarterAssets
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+
+            if (_isStuck)
+            {
+                targetSpeed = 0.0f;
+            }
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -262,7 +296,7 @@ namespace StarterAssets
 
             // move the player
             _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
-                             new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+                 new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
             // update animator if using character
             if (_hasAnimator)
@@ -339,25 +373,6 @@ namespace StarterAssets
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
             }
-        }
-
-        private void InventoryShow()
-        {
-            if (_test.activeSelf == true)
-            {
-                Debug.Log("done?");
-                _test.SetActive(false);
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-            else if (_test.activeSelf == false)
-            {
-                Debug.Log("done?");
-                _test.SetActive(true);
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-            }
-            _input.inventory = false;
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)

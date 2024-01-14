@@ -23,6 +23,8 @@ public class Interactor : MonoBehaviour
                 if(interactable != null)
                 {
                     StartInteraction(interactable);
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                 }
             }
         }
