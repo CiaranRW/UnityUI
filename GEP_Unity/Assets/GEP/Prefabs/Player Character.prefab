@@ -2444,7 +2444,7 @@ MonoBehaviour:
   inventorySize: 5
   primaryInventorySystem:
     inventorySlots: []
-  secondaryInventorySize: 54
+  secondaryInventorySize: 60
   secondaryInventorySystem:
     inventorySlots: []
   backpack: {fileID: 4266550384567048402}

@@ -106,6 +106,7 @@ namespace StarterAssets
         private bool _hasAnimator;
 
         public GameObject _test;
+        public GameObject _chest;
         public bool _isStuck;
 
         private bool IsCurrentDeviceMouse
@@ -166,6 +167,10 @@ namespace StarterAssets
             if (_input.inventory)
             {
                 InventoryShow();
+            }
+            if (_chest.activeInHierarchy)
+            {
+                _test.SetActive(true);
             }
         }
 
