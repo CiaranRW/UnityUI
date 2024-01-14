@@ -144,17 +144,19 @@ namespace StarterAssets
 
         private void Update()
         {
-/*            if (_inventoryUI.activeSelf == true)
-            {
-                _isStuck = true;
-            }*/
-
             if (Keyboard.current.escapeKey.wasPressedThisFrame)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 _isStuck = false;
+                _test.SetActive(false);
             }
+
+            if (_test.activeSelf == true)
+            {
+                _isStuck = true;
+            }
+
 
             _hasAnimator = TryGetComponent(out _animator);
 

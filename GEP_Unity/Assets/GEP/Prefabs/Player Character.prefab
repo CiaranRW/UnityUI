@@ -2239,7 +2239,7 @@ MonoBehaviour:
   JumpTimeout: 0.3
   FallTimeout: 0.15
   Grounded: 1
-  GroundedOffset: -0.14
+  GroundedOffset: 0
   GroundedRadius: 0.28
   GroundLayers:
     serializedVersion: 2
@@ -2448,7 +2448,6 @@ MonoBehaviour:
   secondaryInventorySystem:
     inventorySlots: []
   backpack: {fileID: 4266550384567048402}
-  backpackUI: {fileID: 0}
 --- !u!1 &7298392507975684595
 GameObject:
   m_ObjectHideFlags: 0

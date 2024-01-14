@@ -531,8 +531,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1596923300}
-  - {fileID: 1661013806}
   - {fileID: 1555718737}
+  - {fileID: 1661013806}
   - {fileID: 1249244078}
   m_Father: {fileID: 1549090925}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1111,7 +1111,7 @@ MonoBehaviour:
   primaryInventorySystem:
     inventorySlots: []
   StashUI: {fileID: 779887064}
-  InventoryUI: {fileID: 1006769205}
+  InventoryUI: {fileID: 210682561}
 --- !u!114 &531938173 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7814484240394919945, guid: 4df9a87682b4e6647adb52038cc94cab,
@@ -1202,13 +1202,13 @@ GameObject:
   - component: {fileID: 553386530}
   - component: {fileID: 553386529}
   - component: {fileID: 553386533}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Backpack pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &553386529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1289,7 +1289,7 @@ Transform:
   m_GameObject: {fileID: 553386528}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.094, y: 0.323, z: 1.336}
+  m_LocalPosition: {x: 1.094, y: 4.8, z: 1.336}
   m_LocalScale: {x: 0.41256, y: 0.54402, z: 0.40271}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1308,7 +1308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Backpack: {fileID: 1012013050}
-  Backpack_IMG: {fileID: 1268818329}
+  Backpack_IMG: {fileID: 0}
 --- !u!1 &565364450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   primaryInventorySystem:
     inventorySlots: []
   StashUI: {fileID: 779887064}
-  InventoryUI: {fileID: 1006769205}
+  InventoryUI: {fileID: 210682561}
 --- !u!4 &565364453
 Transform:
   m_ObjectHideFlags: 0
@@ -2128,12 +2128,12 @@ GameObject:
   - component: {fileID: 1006769206}
   - component: {fileID: 1006769208}
   m_Layer: 5
-  m_Name: inventoryUI
+  m_Name: BackpackUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1006769206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2175,13 +2175,13 @@ GameObject:
   - component: {fileID: 1012013053}
   - component: {fileID: 1012013052}
   - component: {fileID: 1012013051}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Backpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &1012013051
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2241,7 +2241,7 @@ Transform:
   m_GameObject: {fileID: 1012013050}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.411, z: -0.361}
+  m_LocalPosition: {x: 0, y: 4.31, z: 4.91}
   m_LocalScale: {x: 0.41256, y: 0.54402, z: 0.31423998}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4595,12 +4595,12 @@ PrefabInstance:
         type: 3}
       propertyPath: _test
       value: 
-      objectReference: {fileID: 1006769205}
+      objectReference: {fileID: 210682561}
     - target: {fileID: 7225226454402747179, guid: 4df9a87682b4e6647adb52038cc94cab,
         type: 3}
       propertyPath: _inventoryUI
       value: 
-      objectReference: {fileID: 1006769205}
+      objectReference: {fileID: 0}
     - target: {fileID: 7814484240394919945, guid: 4df9a87682b4e6647adb52038cc94cab,
         type: 3}
       propertyPath: backpack
@@ -4610,7 +4610,7 @@ PrefabInstance:
         type: 3}
       propertyPath: backpackUI
       value: 
-      objectReference: {fileID: 1006769205}
+      objectReference: {fileID: 0}
     - target: {fileID: 8002607922324312474, guid: 4df9a87682b4e6647adb52038cc94cab,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4881,12 +4881,12 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2114283753834967213}
+  - {fileID: 1012013053}
   - {fileID: 8345070700268369567}
   - {fileID: 2809509115119578148}
   - {fileID: 5116267576230626479}
   - {fileID: 6415725059456787555}
   - {fileID: 553386532}
-  - {fileID: 1012013053}
   - {fileID: 2121750674}
   - {fileID: 1697071428}
   - {fileID: 1725227772}

@@ -25,10 +25,9 @@ public class PlayerInventoryHolder : InventoryHolder
 
     void Update()
     {
-        if (backpack.activeSelf == true)
-        {
-            OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
-        } 
+
+        if (Keyboard.current.iKey.wasPressedThisFrame) OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
+        
     }
 
     public bool AddToInventory(InventoryItemData data, int amount)
