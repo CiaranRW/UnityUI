@@ -19,6 +19,5 @@ public class ChestInventory : InventoryHolder, IInteractable
 
     public void EndInteraction()
     {
-
     }
 }

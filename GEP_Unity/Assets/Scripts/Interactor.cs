@@ -20,8 +20,9 @@ public class Interactor : MonoBehaviour
             {
                 var interactable = colliders[i].GetComponent<IInteractable>();
 
-                if(interactable != null)
+                if (interactable != null)
                 {
+
                     StartInteraction(interactable);
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;

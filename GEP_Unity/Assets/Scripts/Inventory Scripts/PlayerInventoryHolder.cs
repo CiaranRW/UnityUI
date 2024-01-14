@@ -10,6 +10,7 @@ public class PlayerInventoryHolder : InventoryHolder
     [SerializeField] protected InventorySystem secondaryInventorySystem;
 
     public GameObject backpack;
+    public GameObject stashUI;
 
     public InventorySystem SecondaryInventorySystem => secondaryInventorySystem;
 
@@ -25,8 +26,14 @@ public class PlayerInventoryHolder : InventoryHolder
 
     void Update()
     {
-
-        if (Keyboard.current.iKey.wasPressedThisFrame) OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
+        if (Keyboard.current.iKey.wasPressedThisFrame && backpack.activeInHierarchy)
+        {
+            VisibleBackPack();
+        }
+        if (Keyboard.current.eKey.wasPressedThisFrame && stashUI.activeInHierarchy)
+        {
+            VisibleBackPack();
+        }
         
     }
 
@@ -42,6 +49,11 @@ public class PlayerInventoryHolder : InventoryHolder
         }
 
         return false;
+    }
+
+    public void VisibleBackPack()
+    {
+        OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
     }
 
 
